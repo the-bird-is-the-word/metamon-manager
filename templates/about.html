@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    About Metamon Manager - Automatically play on Metamon Island and collect battle statistics
+{% endblock %}
+
+
+{% block metatags %}
+<meta name="description" content="About Metamon Manager. A short history and how you can contact the developer.">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container d-flex flex-wrap" id="main-coin">
+        <div class="py-3 px-3 my-3 container text-center">
+            <h1 class="display-3 fw-bold">About</h1>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <p> In November 2021, I got into the <a class="btn btn-primary inline-button" href="https://www.radiocaca.com">Radio Caca</a> project.
+                    Few months later, I became aware that I need a tool that plays automatically for me on Metamon Island
+                    and that gathers simple statistics such as the generated egg fragments.
+                    In the following weeks, Metamon Manager was born.</p>
+
+                <p> The <b>features</b> of the website are summarized as follows: </p>
+                <ul class="px-5">
+                    <li>
+                        Your Metamons can play automatically on Metamon Island via the Browser. You can choose how
+                        to decide on an opponent, i.e., whether to choose the weakeast opponent or a random one.
+                        If you wish so, Potions (for an N Metamon) or Diamonds (for R, SR, and SSR Metamons) are applied
+                        automatically to level up the Metamon. Eggs are minted after the battles.
+                    </li>
+                    <li>
+                        Statistics on your battles (such as win-percentage and won egg fragments) are collected.
+                        They are presented in a table for each Metamon.
+                    </li>
+                </ul>
+
+                <p> If you want to know more about the project, please have a lot at the
+                    <a class="btn btn-primary inline-button" href="/faq">FAQ</a> section. If you have any questions about the project,
+                    please contact me at <a class="btn btn-success inline-button" href="mailto:jannikatmetamon-manager.com">jannikatmetamon-manager.com</a>.</p>
+                <p> If the project helped you and you want to <b>donate</b>, you can do it using BNB or RACA on the following
+                    address: </p>
+                <center>
+                <pre class="text-center py-2" style="background-color: #3a3a3a">0xf1ee49b23d1990bdb5f5d4ecd094153438180dce</pre>
+                </center>
+
+                <p> This will help me cover the expenses for the server. </p>
+
+                <p> Best, Jannik </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<tbody id="metamon_table_body">
+    {% for met in metamons %}
+    {% set p = progress[loop.index0] %}
+    {% set w = won[loop.index0] %}
+    {% set f = fragments[loop.index0] %}
+    {% set checked = checked_boxes[loop.index0] %}
+    <tr>
+        <td> <input id="{{ loop.index }}" name="mtm{{loop.index}}" type="checkbox" class="select-item checkbox form-check-input" {% if checked_boxes %} checked  {% endif %} > </td>
+        <td>{{ met.tokenId }} </td>
+        <td> <img src="{{ met.imageUrl }}" alt="{{ met.tokenId }}"></td>
+        <td>{{ met.rarity }}</td>
+        <td>{{ met.level }}<i>/{{met.levelMax}}</i></td>
+        <td>{{ met.exp }}</td>
+        <td>{{ met.tear }}<i>/20</i></td>
+        <td> <div class="progress">
+              <div class="progress-bar
+              {% if p == '1' %}
+              progress_finished
+              {% endif %}
+                " role="progressbar" style="width: {{ p }}%" aria-valuenow="{{ p }}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </td>
+        <td> {{ w }} </td>
+        <td> {{ f }} </td>
+    </tr>
+    {% endfor %}
+</tbody>

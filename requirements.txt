@@ -1,0 +1,9 @@
+flask
+flask-sqlalchemy
+mysql-connector-python
+flask-jwt-extended
+Flask-Session
+Flask-Mobility
+requests
+pandas
+web3

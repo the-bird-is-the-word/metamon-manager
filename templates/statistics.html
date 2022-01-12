@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Battle Statistics - Metamon Manager
+{% endblock %}
+
+{% block metatags %}
+<meta name="description" content="Show statistics of your battles on Metamon Island using Metamon Manager.">
+{% endblock %}
+
+{% block header_includes %}
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+<script src="{{ url_for('static', filename='bootstrap-table-export.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='FileSaver.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='xlsx.core.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/tableExport.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class ="container">
+        <div class="my-3 container text-center">
+            <h1 class="display-3 fw-bold">Battle Statistics</h1>
+        </div>
+
+        <div class="container justify-content-center" id="metamons" role="tabpanel" aria-labelledby="metamons-tab">
+            <table
+              id="table-stats-metamons"
+              data-toggle="table"
+              data-sortable="true"
+              data-height="460"
+              {% if wallet %}
+              data-url="data/metamons.json"
+              {% endif %}
+              data-show-export="true"
+              data-export-types="['csv', 'excel']"
+              data-export-options=" { fileName: function () { return 'metamons' } }"
+              data-classes="table table-striped table-sm table-dark table-hover">
+              <thead class="thead-dark">
+                <tr class="tr-class-1">
+                    <th colspan="5" class="text-center">Metamon</th>
+                    <th colspan="5" class="text-center" style="border-left: 1px solid white;">Results</th>
+                </tr>
+                <tr class="tr-class-2">
+                  <!--<th data-field="check" data-checkbox="true">ID</th>-->
+                  <th data-field="metamon_id" data-sortable="true">#Metamon</th>
+                  <th data-field="rarity" data-sortable="true">Rarity</th>
+                  <th data-field="power" data-sortable="true">Power</th>
+                  <th data-field="metamon_level" data-sortable="true">Level</th>
+                  <th data-field="experience" data-sortable="true">Experience</th>
+
+                  <th data-field="battles" data-sortable="true">Battles</th>
+                  <th data-field="won" data-sortable="true">Won</th>
+                  <th data-field="win%" data-sortable="true">Win(%)</th>
+                  <th data-field="fragments" data-sortable="true">Fragments</th>
+                  <th data-field="last" data-sortable="true" data-formatter="window.dateTimeFormatter">Last battle</th>
+                </tr>
+              </thead>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+

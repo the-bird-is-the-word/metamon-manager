@@ -1,0 +1,10 @@
+.idea/
+__pycache__/
+flask_session/
+venv/
+static/.cache
+static/node_modules*
+logs/
+settings.py
+remainings/
+data/

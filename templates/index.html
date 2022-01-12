@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Metamon Manager - Automatically plays your Metamons on Metamon Island and collect battle statistics
+{% endblock %}
+
+{% block metatags %}
+<meta name="description" content="Automatically plays your Metamons on Metamon Island in the browser and collect statistics of your battles.">
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+    {% if wallet %}
+    <div class="px-4 py-5 my-2 text-center">
+        <h1 class="display-5 my-4 fw-bold">Connected to Metamon Manager!</h1>
+        <div class="row justify-content-center my-2">
+            <div class="col-md-6 text-center justify-content-center">
+                <a href="{{ url_for('autoplay_page') }}" class="btn btn-success btn-lg mx-3 my-2 gap-3" style="line-height: 40px;">Quick battles</a>
+                <a href="{{ url_for('statistics_page') }}" class="btn btn-success btn-lg mx-3 my-2 gap-3" style="line-height: 40px;">Battle statistics</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="container marketing">
+        <div class="px-4 py-2 my-2 text-center">
+            <h1 class="display-3 fw-bold my-4">Metamon Manager</h1>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container marketing">
+        <div class="row featurette justify-content-center">
+            <div class="col-md-2 text-center my-4 symbols-wrapper" style="vertical-align: middle;">
+                <span class="vertical-align-helper"></span>
+                <svg class="featurette-image img-fluid mx-auto main-symbols"  xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M20 9c-.04-4.39-3.6-7.93-8-7.93S4.04 4.61 4 9v6c0 4.42 3.58 8 8 8s8-3.58 8-8V9zm-2 0h-5V3.16c2.81.47 4.96 2.9 5 5.84zm-7-5.84V9H6c.04-2.94 2.19-5.37 5-5.84zM18 15c0 3.31-2.69 6-6 6s-6-2.69-6-6v-4h12v4z"/></svg>
+            </div>
+            <div class="col-md-9 px-3">
+                <h2 class="featurette-heading colored-heading my-4">Let your Metamons battle in the browser automatically with a single click.</h2>
+                <ul class="features-lead my-3">
+                    <li class="my-1"> Select the <strong>weakest opponent</strong> or a <b>random one</b>. </li>
+                    <li class="my-1"> Your Metamons are <b>levelled</b> up automatically if potions or diamonds are available. </li>
+                    <li class="my-1"> Eggs are <b>minted</b> automatically from egg fragments. </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette justify-content-center">
+            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
+                <span class="vertical-align-helper"></span>
+                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v3H5V5h15zm-5 14h-5v-9h5v9zM5 10h3v9H5v-9zm12 9v-9h3v9h-3z"/></svg>
+            </div>
+            <div class="col-md-9 px-3">
+                <h2 class="featurette-heading colored-heading my-4">Collect statistics of your battles.</h2>
+                <ul class="features-lead my-3">
+                    <li class="my-1"> Collect results such as <b>win-percentage</b>, <b>egg fragments</b>, <b>minted eggs</b>, ...</li>
+                    <li class="my-1"> Safely stored in the cloud such that it can only be accessed by you. </li>
+                    <li class="my-1"> Export all data to your hard disk, if you wish so. </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% if wallet %}
+    {% else %}
+    <div class="container marketing">
+        <h2 class="text-center mb-4 mt-5 display-5 fw-bold">
+            Getting started:
+        </h2>
+
+        <div class="container justify-content-sm-center">
+            <div class="row my-2">
+                <div class="col text-center justify-content-center">
+                    <button type="button" style="line-height: 40px;" class="btn btn-primary btn-lg px-4 mx-2 my-2 metamask-login">Connect MetaMask
+                    <img height="35" src="{{ url_for('static', filename='metamask.png') }}" />
+                    </button>
+                    <button type="button" style="line-height: 40px;" class="btn btn-primary btn-lg px-4 mx-2 my-2 walletconnect-login">Connect
+                    <img height="25" src="{{ url_for('static', filename='walletconnect.png') }}" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container my-4 justify-content-center">
+        <div class="row justify-content-center">
+            <img id="raca" src="{{ url_for('static', filename='RACA.png') }}" height="150pt"/>
+        </div>
+    </div>
+
+
+    <div class="container px-4 py-3">
+      <center><h2 class="pb-1 display-6 border-bottom"><b>News:</b></h2></center>
+
+        <div class="row justify-content-center">
+            <article class="blog-post col-md-10 my-1">
+                <h3 class="blog-post-title colored-heading">Welcome to Metamon Manager!</h3>
+                <p class="blog-post-meta"><i>January 10th, 2022 by Jannik</i></p>
+
+                <p>
+                    Today, I deployed Metamon Manager. If you want to read more about it, please check out the
+                <a class="btn btn-primary inline-button" href="{{ url_for('about_page') }}">About</a> and
+                    <a class="btn btn-primary inline-button" href="{{ url_for('faq_page') }}">FAQ</a> pages.
+                    Please get in touch with me, if you have further questions. And if you like it, please spread the word!
+                    Depending on the feedback by the community, I will develop some new features in the future.
+                </p>
+            </article>
+        </div>
+    </div>
+{% endblock %}

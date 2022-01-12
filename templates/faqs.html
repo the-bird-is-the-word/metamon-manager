@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    FAQs - Metamon Manager - Questions and answers on Metamon Manager
+{% endblock %}
+
+
+{% block metatags %}
+<meta name="description" content="Frequently asked questions on Metamon Manager. For example, the benefit of using the website is described.">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container d-flex flex-wrap" id="main-coin">
+        <div class="py-3 px-3 my-3 container text-center">
+            <h1 class="display-3 fw-bold">FAQs</h1>
+        </div>
+
+        <div class="my-3 container" style="">
+          <div class="accordion open" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="benefits">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  What are the benefits of using Metamon Manager?
+                </button>
+              </h2>
+              <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="headingBenefits">
+                <div class="accordion-body">
+                  <p>
+                  Metamon Manager plays automaticaly on Metamon Island. For me, this is very useful on days in which I
+                  do not have a lot of time and desire to play with my beloved Metamons. Especially people with a large
+                  number of Metamons could benefit.</p>
+
+                  <p>
+                  In addition, the website allows you to collect statistics/results of your battles. This can be used to
+                    examine the individual Metamons, for example with respect to the win-rate or the number of generated egg fragments.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="safety">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                  Is it safe to use the website? Why should I trust it?
+                </button>
+              </h2>
+              <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="safety">
+                <div class="accordion-body">
+                  <p> Yes, the website is safe to use. In case you don't trust me - which I could understand given the
+                    number of scammers in crypto - let me bring some arguments: When using a wallet such as MetaMask, you are informed
+                  about any request a Dapp is trying to make
+                  (e.g. connecting to the wallet, approving to spend some coins, ...). You are in control of what
+                  information is provided to the website! </p>
+
+                  <p> To use the features on the website, Metamon Manager only requires (i) your wallet address (that owns
+                  the Metamon NFTs) and (ii) a signed login message. The latter
+                  is required to identify you are the owner of the wallet and are allowed to login to Metamon
+                  Island using the API.</p>
+
+                  <p> With your wallet address and a signed login message, the website can connect to Metamon Island but
+                    cannot perform any malicious activity. (Think about it: If theoretically, it would try to steal some
+                    assets from your wallet, you are notified about it and can reject.) </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="data-stored">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                  Will you store any data about my wallet or battles?
+                </button>
+              </h2>
+              <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="data-stored">
+                <div class="accordion-body">
+                  <p> To provide you statistics of your battles, the website will store information on your Metamon and
+                    battles performed on the website. This is required to provide you the information under
+                    <a class="btn btn-primary inline-button">Battle statistics</a>. </p>
+
+                  <p> If you do not wish so, you can uncheck the checkbox "Save statistics" and no data will be stored.
+                    Of course, then the battle statistics will not show these battles or that progress on your Metamon.</p>
+
+                  <p> If you wish to have all your data deleted, please contact me via Email and I will delete it. </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="requirements">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  What browser is suggested to use the website?
+                </button>
+              </h2>
+              <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="requirements">
+                <div class="accordion-body">
+                  <p> I suggest modern browsers such as a recent Firefox,
+                  Chrome, Opera, Edge, or Safari. There may be problems with older versions of the Internet Explorer.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="troubleshooting">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                  Something does not work, what should I do?
+                </button>
+              </h2>
+              <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="troubleshooting">
+                <div class="accordion-body">
+                  <p> Reload the page and retry it. Log out and in again, and try again. If the problem persists,
+                  let me know about it with a detailled description of the problem and the browser (name and version)
+                  you are using.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="add-features">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                  Can you please add feature X?
+                </button>
+              </h2>
+              <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="add-features">
+                <div class="accordion-body">
+                  <p> If you are missing a feature, please let me know about it. I am always looking forward to feedback and
+                  the more people mention a feature, the higher the probability I will implement it ;-)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="contact">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                  How can I contact you?
+                </button>
+              </h2>
+              <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="contact">
+                <div class="accordion-body">
+                  <p> <a class="btn btn-success inline-button" href="mailto:jayatmetamon-manager.com">Write me an email.</a> </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="affiliation">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                  Is this an official website of <a class="btn btn-primary inline-button" href="https://www.radiocaca.com">Radio Caca</a>?
+                </button>
+              </h2>
+              <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="affiliation">
+                <div class="accordion-body">
+                  No. I am in not affiliated with Radio Caca.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+{% endblock %}
