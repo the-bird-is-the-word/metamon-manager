@@ -38,20 +38,6 @@ if (document.getElementById("battle-submit-button")) {
     };
 }
 
-async function log (text) {
-    const options = {
-        method: 'post',
-        headers: {
-          'X-CSRF-TOKEN': getCookie('csrf_access_token'),
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(text)
-    };
-
-    await fetch('/log', options);
-
-}
-
 async function fetch_loop(url, method, data, headers) {
     //let h =  {'Content-Type': 'application/json'};
     let h =  {};
@@ -168,7 +154,18 @@ class MetamonIsland {
 
 			const mtms = response["data"]["metamonList"];
             if (mtms.length > 0) {
-                Object.assign(data, mtms);
+                // On 18/01/2022 the API seems to be changed
+                let added = false;
+                for (let mtm of mtms) {
+                    if (this.metamon_idx(mtm.tokenId, data) == -1) {
+                        data.push(mtm);
+                        added = true;
+                    }
+                }
+
+                if (!added)
+                    break;
+                
                 page += 1;
 			}
             else
@@ -182,14 +179,15 @@ class MetamonIsland {
     /**
      * Return the index of a metamon with token monster_token_id in the list of metamons.
      */
-    metamon_idx(monster_token_id) {
+    metamon_idx(monster_token_id, metamons) {
         let count = 0;
-        for (let monster of this.metamons) {
+        for (let monster of metamons) {
             if (monster.tokenId == monster_token_id) {
                 return count;
             }
             count++;
         }
+        return -1;
     }
 	
 	/**
@@ -213,7 +211,7 @@ class MetamonIsland {
             // Workaround: Pass the index of the monster in the current table
             // This is required because updateMetamonTable uses metamon objects at the beginning of the battles
             // However, the list of metamons in mi gets updated after level ups, thus it would not find the metamons anymore
-            const monster_table_idx = this.metamon_idx(monster.tokenId);
+            const monster_table_idx = this.metamon_idx(monster.tokenId, this.metamons);
             await this.battleMetamon(monster, monster_table_idx, target_monster_id, tear, levelup);
 
             if (this.not_enough_money)
@@ -409,8 +407,6 @@ async function loadMetamons (address, sign, msg) {
     enable_submit_button(false);
     show_spinner(true);
     button_text("Loading...");
-
-    await log("Loading Metamon table " + JSON.stringify({"a": 1, "b": 2}));
 
     let success = true;
     if (mi == null) {
