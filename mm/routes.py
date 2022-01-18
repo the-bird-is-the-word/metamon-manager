@@ -156,6 +156,14 @@ def login_page():
 @jwt_required()
 def logout_page():
     response = redirect(url_for('index_page'))
+
+    # Delete session data if available
+    if "signature" in session.keys():
+        del session["signature"]
+    if "msg" in session.keys():
+        del session["msg"]
+
+    # Unset JWT acccess cookie
     unset_jwt_cookies(response)
     response.set_data(render_template("index.html", show_consent=show_consent_toast(session)))
     return response
