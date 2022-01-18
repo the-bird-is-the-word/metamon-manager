@@ -9,6 +9,3 @@ This is the code of Metamon Manager hosted on [https://metamon-manager.com](http
     2. whether automatic level ups should occur 
     3. whether eggs shall be minted after the battles
 2. Statistics on your battles (such as win-percentage and won egg fragments) are collected.
-
-![Radio CACA](https://github.com/the-bird-is-the-word/metamon-manager/tree/master/static/RACA.png "Radio Caca")
-        
