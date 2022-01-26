@@ -171,6 +171,9 @@ class MetamonIsland {
             else
                 break;
 		};
+
+        // Sort metamon list
+        data.sort((monster1, monster2) => monster1.tokenId - monster2.tokenId);
 		
         this.metamons = data;
         return data;
