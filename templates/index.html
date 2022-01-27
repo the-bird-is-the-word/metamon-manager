@@ -48,8 +48,6 @@
             </div>
         </div>
 
-        <hr class="featurette-divider">
-
         <div class="row featurette justify-content-center">
             <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
                 <span class="vertical-align-helper"></span>
@@ -61,6 +59,21 @@
                     <li class="my-1"> Collect results such as <b>win-percentage</b>, <b>egg fragments</b>, <b>minted eggs</b>, ...</li>
                     <li class="my-1"> Safely stored in the cloud such that it can only be accessed by you. </li>
                     <li class="my-1"> Export all data to your hard disk, if you wish so. </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row featurette justify-content-center">
+            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
+                <span class="vertical-align-helper"></span>
+                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            </div>
+            <div class="col-md-9 px-3">
+                <h2 class="featurette-heading colored-heading my-4">Using Metamon Manager is safe!</h2>
+                <ul class="features-lead my-3">
+                    <li class="my-1"> Metamon Manager only requires your wallet address and a signed login message. </li>
+                    <li class="my-1"> <b>Open source code.</b> </li>
+                    <li class="my-1"> The developer is indicated on the website and <b>not anonymous</b>. </li>
                 </ul>
             </div>
         </div>
@@ -88,50 +101,18 @@
     </div>
     {% endif %}
 
-    <div class="container marketing">
-        <h2 class="text-center mb-4 mt-5 display-5 fw-bold">
-            Security:
-        </h2>
-
-        <div class="row featurette justify-content-center">
-            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
-                <span class="vertical-align-helper"></span>
-                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-            </div>
-            <div class="col-md-9 px-3">
-                <h2 class="featurette-heading colored-heading my-4">Using the website is safe!</h2>
-                <ul class="features-lead my-3">
-                    <li class="my-1"> Metamon Manager only requires your wallet address and a signed login message. </li>
-                    <li class="my-1"> <b>Open source code.</b> </li>
-                    <li class="my-1"> The developer is indicated on the website and <b>not anonymous</b>. </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    <!--
     <div class="container my-4 justify-content-center">
-        <div class="row justify-content-center">
+        <hr class="featurette-divider">
+    </div>-->
+
+    <div class="container my-5">
+        <div class="row justify-content-center my-5">
             <img id="raca" src="{{ url_for('static', filename='RACA.png') }}" height="150pt"/>
         </div>
-    </div>
 
-
-    <div class="container px-4 py-3">
-      <center><h2 class="pb-1 display-6 border-bottom"><b>News:</b></h2></center>
-
-        <div class="row justify-content-center">
-            <article class="blog-post col-md-10 my-1">
-                <h3 class="blog-post-title colored-heading">Welcome to Metamon Manager!</h3>
-                <p class="blog-post-meta"><i>January 10th, 2022 by Jannik</i></p>
-
-                <p>
-                    Today, I deployed Metamon Manager. If you want to read more about it, please check out the
-                <a class="btn btn-primary inline-button" href="{{ url_for('about_page') }}">About</a> and
-                    <a class="btn btn-primary inline-button" href="{{ url_for('faq_page') }}">FAQ</a> pages.
-                    Please get in touch with me, if you have further questions. And if you like it, please spread the word!
-                    Depending on the feedback by the community, I will develop some new features in the future.
-                </p>
-            </article>
+        <div class="ratio ratio-16x9 text-center">
+            <iframe class="" src="https://www.youtube.com/embed/1lY8GgQ09Cw?rel=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 {% endblock %}
