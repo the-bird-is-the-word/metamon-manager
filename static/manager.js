@@ -98,7 +98,7 @@ class MetamonIsland {
 	}
 	
 	async initToken() {
-		const payload = "address=" + this.address + "&sign=" + this.sign + "&msg=" + this.msg;
+		const payload = "address=" + this.address + "&sign=" + this.sign + "&msg=" + this.msg + "&network=1";
         const response = await fetch_loop(TOKEN_URL, "post", payload, {"Content-Type": "application/x-www-form-urlencoded"});
 
         if (response["code"] == "SUCCESS") {
