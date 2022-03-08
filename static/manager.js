@@ -102,7 +102,7 @@ class MetamonIsland {
         const response = await fetch_loop(TOKEN_URL, "post", payload, {"Content-Type": "application/x-www-form-urlencoded"});
 
         if (response["code"] == "SUCCESS") {
-            this.token = response["data"];
+            this.token = response.data.accessToken;
             return true;
         }
         else {
