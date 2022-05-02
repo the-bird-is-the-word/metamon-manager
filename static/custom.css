@@ -1,7 +1,11 @@
 body {
-    background-color: #444444;
+    /*background-color: #444444;*/;
     color: #eeeeee;
     font-family: "Open Sans";
+    background: #444444;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #7D7D7D, 5%, #444444); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 body a {
@@ -42,20 +46,31 @@ body a:hover {
 
 nav {
     border-bottom: 1.5px solid #1a1a1a;
+    background: #2a2a2a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #4A4A4A, 30%, #2a2a2a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #888888, 15%, #2a2a2a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 nav li {
-    border: 1px solid #2a2a2a;
+    border: 2px solid transparent; /*#2a2a2a;*/
 }
 
 nav li:hover {
-    background-color: brown;
-    border: 1px solid black;
+    background: brown;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #C57777, 30%, #A52A2A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #C57777, 30%, #A52A2A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 2px solid black;
+}
+#top-footer {
+    background: #2a2a2a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #444444, 5%, #2a2a2a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #444444, 5%, #2a2a2a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #bottom-footer {
-    background-color: #050505;
-    border-top: 1.5px solid #222;
+    background: #050505;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #444444, #050505);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #444444, 5%, #050505); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #connect-text {
@@ -236,7 +251,7 @@ nav li:hover {
 }
 
 .accordion-item {
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .accordion-button::after {
