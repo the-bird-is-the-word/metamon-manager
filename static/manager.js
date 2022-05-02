@@ -82,6 +82,7 @@ const LIST_BATTLER_URL = BASE_URL + "/getBattelObjects";
 const WALLET_PROPERTY_LIST = BASE_URL + "/getWalletPropertyList";
 const LVL_UP_URL = BASE_URL + "/updateMonster";
 const MINT_EGG_URL = BASE_URL + "/composeMonsterEgg";
+const CHECK_BAG_URL = BASE_URL + "/checkBag";
 
 class MetamonIsland {
 	constructor(address, sign, msg) {
@@ -328,18 +329,31 @@ class MetamonIsland {
 	async mintEggs () {
         // await this.init_token();
 
-        const payload = {"address": this.address};
+		const payload = {"address": this.address};
+		let totalEggFragments = 0;
 
-        let minted_eggs = 0;
-        while (true) {
-            const res = await fetch_loop(MINT_EGG_URL, "post", urlencoded(payload), this.headersTokenAndCT());
-            const code = res["code"];
-            if (code != "SUCCESS")
-                break;
-            minted_eggs += 1;
+        // Check current egg fragments
+		const bagRes = await fetch_loop(CHECK_BAG_URL, "post", urlencoded(payload), this.headersTokenAndCT());
+
+		const items = bagRes.data.item; 
+        for (const item of items) {
+			if (item.bpType == 1) {
+				totalEggFragments = item.bpNum;
+				break;
+			}
 		}
-        console.log("Minted Eggs Total: " + minted_eggs);
-        return minted_eggs;
+        const totalEggs = parseInt(parseInt(totalEggFragments) / 1000);
+
+		if (totalEggs < 1) 
+			return 0;
+
+		const res = await fetch_loop(MINT_EGG_URL, "post", urlencoded(payload), this.headersTokenAndCT());
+		const code = res["code"];
+		if (code != "SUCCESS")
+			return 0;
+
+        console.log("Minted Eggs Total: " + totalEggs);
+        return totalEggs;
 	}
 	
 	// Static methods
@@ -463,14 +477,14 @@ async function startBattles () {
         const stats = result[0];
         const mtm_stats = result[1];
         
-        stats["minted_eggs"] = 0;
+        stats.minted_eggs = 0;
         if (minteggs) {
             const minted_eggs = await mi.mintEggs();
-            stats["minted_eggs"] = minted_eggs;
+            stats.minted_eggs = minted_eggs;
         }
 
         if (statistics)
-            sendStats([stats, mtm_stats, statistics]);
+            sendStats([stats, mtm_stats]);
 
         fillSummaryTable(stats);
         show_battle_results();

@@ -34,4 +34,4 @@ class DailyStats(db.Model):
     minted_eggs = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f'<Battle {self.id}, {self.dt}, {self.minted_eggs}>'
+        return f'<Battle {self.id}, {self.timestamp}>'

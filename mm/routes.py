@@ -202,7 +202,7 @@ def stats_post():
 
     wallet = get_jwt_identity()
 
-    stats, mtm_stats, save_statistics = request.json
+    stats, mtm_stats = request.json
 
     for mtm_stat in mtm_stats:
         # 1. Save info about a metamon if not already in the database
@@ -214,6 +214,7 @@ def stats_post():
             mtm.metamon_level = mtm_stat["metamon_level"]
             mtm.experience = mtm_stat["experience"]
             mtm.league_level = mtm_stat["league_level"]
+            mtm.power = mtm_stat["power"]
         else:
             mtm_data = {key: mtm_stat[key] for key in ["metamon_id", "rarity", "power", "metamon_level", "experience", "league_level"]}
             mtm_new = Metamon(**mtm_data)
