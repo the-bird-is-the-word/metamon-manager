@@ -4,56 +4,72 @@ import { error_msg } from './utils.js';
 const BSC_CHAIN_ID = 56;
 
 [].forEach.call(document.getElementsByClassName("metamask-login"), (item, index) => {
-    item.onclick = async ()=>{
-        try  {
-            if (!await check_metamask()) {
-                return false;
-            }
-            if (!check_chain()) {
-                return false;
-            }
-
-            const wallet_address = await get_wallet_address();
-            await login(wallet_address, window.ethereum);
-        }
-        catch(error) {
-            if (error.code == 4001) {
-                error_msg("User denied MetaMask to sign the message. This is required to enter the Metamon Island.", "danger");
-            }
-        }
-    };
+    item.onclick = async () => {
+		login_metamask();
+	}
 });
 
-async function check_metamask(wallet_address)
-{
-    let success = false;
-    try {
-        success = ethereum.isMetaMask;
-    }
-    catch (e) {
-        console.log(e);
-    }
+async function login_metamask() {
+	const provider = await detectEthereumProvider()
 
-    if (!success){
-        error_msg("Cannot find Metamask!", "danger");
-        return false;
-    }
+	if (provider) {
+		try  {
+			if (!await check_chain(provider)) {
+				return false;
+			}
+
+			const wallet_address = await get_wallet_address(provider);
+			await login(wallet_address, provider);
+		}
+		catch(error) {
+			if (error.code == 4001) {
+				error_msg("An error occurred. Try again and if the error persists, please contact me.", "danger");
+			}
+		}
+	} else {
+	  error_msg("Cannot find Metamask!", "danger");
+	  return false;
+	}
+};
+
+async function check_chain(provider)
+{
+	if (provider.chainId !== BSC_CHAIN_ID) {
+		try {
+		  	await provider.request({
+				method: 'wallet_switchEthereumChain',
+				params: [{ chainId: "0x38" }]
+			});
+		} catch (err) {
+			// This error code indicates that the chain has not been added to MetaMask
+			if (err.code === 4902) {
+				try {
+					await provider.request({
+						method: 'wallet_addEthereumChain',
+						params: [
+							{
+							chainName: 'Binance Chain',
+							chainId: "0x38",
+							nativeCurrency: { name: 'BNB', decimals: 18, symbol: 'BNB' },
+							rpcUrls: ['https://bsc-dataseed.binance.org/']
+							}
+						]
+					});
+				}
+				catch (err) {
+					error_msg("You need to switch to Binance Chain to login!", "danger");
+					return false;
+				}
+			}
+		}
+	}
     return true;
 }
 
-function check_chain(wallet_address)
-{
-    if (ethereum.chainId != 56) {
-        error_msg("You need to switch to Binance Smart Chain Mainnet!", "danger");
-        return false;
-    }
-    return true;
-}
-
-async function get_wallet_address()
+async function get_wallet_address(provider)
 {
     try {
-        let response = await ethereum.request({method: "eth_requestAccounts"});
+        let response = await provider.request({method: "eth_requestAccounts"});
         return response[0];
     } catch(e) {
         console.log(error);
