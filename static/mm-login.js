@@ -2,6 +2,7 @@ import { login } from './login-auth.js';
 import { error_msg } from './utils.js';
 
 const BSC_CHAIN_ID = 56;
+let provider;
 
 [].forEach.call(document.getElementsByClassName("metamask-login"), (item, index) => {
     item.onclick = async () => {
@@ -9,9 +10,13 @@ const BSC_CHAIN_ID = 56;
 	}
 });
 
-async function login_metamask() {
-	const provider = await detectEthereumProvider()
+document.addEventListener('DOMContentLoaded', init_Provider);
 
+async function init_Provider() {
+	provider = await detectEthereumProvider()
+}
+
+async function login_metamask() {
 	if (provider) {
 		try  {
 			if (!await check_chain(provider)) {
