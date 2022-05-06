@@ -34,54 +34,27 @@
 
     <div class="container marketing">
         <div class="row featurette justify-content-center">
-            <div class="col-md-2 text-center my-4 symbols-wrapper" style="vertical-align: middle;">
-                <span class="vertical-align-helper"></span>
-                <svg class="featurette-image img-fluid mx-auto main-symbols"  xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M20 9c-.04-4.39-3.6-7.93-8-7.93S4.04 4.61 4 9v6c0 4.42 3.58 8 8 8s8-3.58 8-8V9zm-2 0h-5V3.16c2.81.47 4.96 2.9 5 5.84zm-7-5.84V9H6c.04-2.94 2.19-5.37 5-5.84zM18 15c0 3.31-2.69 6-6 6s-6-2.69-6-6v-4h12v4z"/></svg>
-            </div>
-            <div class="col-md-9 px-3">
-                <h2 class="featurette-heading colored-heading my-4">Let your Metamons battle in the browser automatically with a single click.</h2>
-                <ul class="features-lead my-3">
-                    <li class="my-1"> Select the <strong>weakest opponent</strong> or a <b>random one</b>. </li>
-                    <li class="my-1"> Your Metamons are <b>levelled</b> up automatically if potions or diamonds are available. </li>
-                    <li class="my-1"> Eggs are <b>minted</b> automatically from egg fragments. </li>
-                </ul>
+            <div class="col-md-8 px-3 text-center">
+                <h2 class="pb-1 my-3 text-center border-bottom display-6"></h2>
             </div>
         </div>
+        <div>
+            <div class="col px-3 text-center">
+                <h2 class="featurette-heading display-5 my-4">Don't waste time on Metamon Island.</h2>
 
-        <div class="row featurette justify-content-center">
-            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
-                <span class="vertical-align-helper"></span>
-                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v3H5V5h15zm-5 14h-5v-9h5v9zM5 10h3v9H5v-9zm12 9v-9h3v9h-3z"/></svg>
-            </div>
-            <div class="col-md-9 px-3">
-                <h2 class="featurette-heading colored-heading my-4">Collect statistics of your battles.</h2>
-                <ul class="features-lead my-3">
-                    <li class="my-1"> Collect results such as <b>win-percentage</b>, <b>egg fragments</b>, <b>minted eggs</b>, ...</li>
-                    <li class="my-1"> Safely stored in the cloud such that it can only be accessed by you. </li>
-                    <li class="my-1"> Export all data to your hard disk, if you wish so. </li>
-                </ul>
+                <h2 class="featurette-heading display-5 my-4">Battle in a few seconds & collect statistics of your battles!</h2>
             </div>
         </div>
-
         <div class="row featurette justify-content-center">
-            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
-                <span class="vertical-align-helper"></span>
-                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-            </div>
-            <div class="col-md-9 px-3">
-                <h2 class="featurette-heading colored-heading my-4">Using Metamon Manager is safe!</h2>
-                <ul class="features-lead my-3">
-                    <li class="my-1"> Metamon Manager only requires your wallet address and a signed login message. </li>
-                    <li class="my-1"> <b>Open source code.</b> </li>
-                    <li class="my-1"> The developer is indicated on the website and <b>not anonymous</b>. </li>
-                </ul>
+            <div class="col-md-8 px-3 text-center">
+                <h2 class="pb-1 my-3 text-center border-bottom display-6"></h2>
             </div>
         </div>
     </div>
 
     {% if wallet %}
     {% else %}
-    <div class="container marketing">
+    <div class="container marketing my-5">
         <h2 class="text-center mb-4 mt-5 display-5 fw-bold">
             Getting started:
         </h2>
@@ -100,6 +73,51 @@
         </div>
     </div>
     {% endif %}
+
+    <div class="container marketing">
+        <div class="row featurette justify-content-center">
+            <div class="col-md-2 text-center my-4 symbols-wrapper" style="vertical-align: middle;">
+                <span class="vertical-align-helper"></span>
+                <svg class="featurette-image img-fluid mx-auto main-symbols"  xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M20 9c-.04-4.39-3.6-7.93-8-7.93S4.04 4.61 4 9v6c0 4.42 3.58 8 8 8s8-3.58 8-8V9zm-2 0h-5V3.16c2.81.47 4.96 2.9 5 5.84zm-7-5.84V9H6c.04-2.94 2.19-5.37 5-5.84zM18 15c0 3.31-2.69 6-6 6s-6-2.69-6-6v-4h12v4z"/></svg>
+            </div>
+            <div class="col-md-9 px-3">
+                <h2 class="featurette-heading colored-heading my-4">Your Metamons automatically battle in the browser with a single click.</h2>
+                <ul class="features-lead my-3">
+                    <li class="my-1"> Don't pay additional fees. </li>
+                    <li class="my-1"> Your Metamons are <b>levelled</b> up automatically. </li>
+                    <li class="my-1"> Eggs are <b>minted</b> automatically. </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row featurette justify-content-center">
+            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
+                <span class="vertical-align-helper"></span>
+                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M20 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v3H5V5h15zm-5 14h-5v-9h5v9zM5 10h3v9H5v-9zm12 9v-9h3v9h-3z"/></svg>
+            </div>
+            <div class="col-md-9 px-3">
+                <h2 class="featurette-heading colored-heading my-4">Collect statistics of your battles.</h2>
+                <ul class="features-lead my-3">
+                    <li class="my-1"> Collect results such as <b>win-percentage</b>, <b>egg fragments</b>, <b>minted eggs</b>, ...</li>
+                    <li class="my-1"> Safely stored in the cloud. </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row featurette justify-content-center">
+            <div class="col-md-2 text-center my-4" style="vertical-align: middle;">
+                <span class="vertical-align-helper"></span>
+                <svg class="featurette-image img-fluid mx-auto main-symbols" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#0000CD" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            </div>
+            <div class="col-md-9 px-3">
+                <h2 class="featurette-heading colored-heading my-4">Using Metamon Manager is safe!</h2>
+                <ul class="features-lead my-3">
+                    <li class="my-1"> <b>Open source code.</b> </li>
+                    <li class="my-1"> The developer is indicated on the website and <b>not anonymous</b>. </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <!--
     <div class="container my-4 justify-content-center">
