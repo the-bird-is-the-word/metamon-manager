@@ -5,7 +5,7 @@ body {
     background: #444444;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #7D7D7D, 5%, #444444); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-attachment: fixed;
 }
 
 body a {
