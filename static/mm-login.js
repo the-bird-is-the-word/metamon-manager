@@ -10,6 +10,12 @@ let provider;
 	}
 });
 
+[].forEach.call(document.getElementsByClassName("metamask-login-mobile"), (item, index) => {
+    item.onclick = async () => {
+		error_msg("MetaMask cannot directly be used on mobile devices. Use WalletConnect instead to connect to your MetaMask wallet. Retry if it does not work on the first try.", "warning");
+	}
+});
+
 document.addEventListener('DOMContentLoaded', init_Provider);
 
 async function init_Provider() {
