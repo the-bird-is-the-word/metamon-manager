@@ -100,11 +100,13 @@
             </div>
         </div>
 
+        {% if config.WITH_ADS %}
         <div class="row justify-content-center">
             <div class="col-lg ads-col">
                 <iframe data-aa='1893804' src='//acceptable.a-ads.com/1893804' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>
             </div>
         </div>
+        {% endif %}
     </div>
 
     {% block content %}

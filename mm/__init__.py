@@ -39,6 +39,7 @@ app.config["JWT_COOKIE_SAMESITE"] = "Strict"
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = JWT_ACCESS_TOKEN_EXPIRES
 app.config['JWT_REFRESH_TOKEN_EXPIRES'] = JWT_REFRESH_TOKEN_EXPIRES
 app.config["JWT_ACCESS_CSRF_COOKIE_NAME"] = "csrf_access_token"
+app.config["WITH_ADS"] = False
 jwt = JWTManager(app)
 
 # Session
