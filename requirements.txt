@@ -7,3 +7,4 @@ Flask-Mobility
 requests
 pandas
 web3
+gunicorn
